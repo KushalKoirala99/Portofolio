@@ -13,12 +13,12 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: inherit;
+  background: hsla(0, 1%, 73%, 0.745);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4e4c4c;
+  background: #888;
   border-radius: 10px;
 }
 

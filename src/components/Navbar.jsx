@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Menu } from "lucide-react";
+import MenuIcon from '../assets/menu.svg';
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full py-4 z-50  bg-white font-mono text-2xl  shadow-md">
-      <div className="container mx-auto flex justify-center items-center ">
+    <nav className="fixed top-0 left-0 w-full pb-4  z-50 text-black font-mono text-2xl  shadow-md md:py-4 ">
+      <div className={ `mx-auto flex flex-row-reverse md:flex md:justify-center  ${isMenuOpen? `mt-2` : ``}`}>
         {/* desktop menu */}
         <ul className="hidden md:gap-16 md:flex  lg:gap-40 lg:flex">
           <li>
@@ -33,31 +34,16 @@ const Navbar = () => {
 
         {/* moblie menu */}
         <button
-          className="md:hidden flex items-center"
+          className="md:hidden pr-4"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <Menu size={40}></Menu>
+          <img src={MenuIcon} alt="Menu Icon" className="w-14"></img>
         </button>
         {isMenuOpen && (
-          <ul className="absolute top-16 left-0 w-full bg-white text-center py-4  shadow-md md:hidden">
+          <ul className="w-full  pl-14 flex justify-center items-center md:hidden">
             <li>
               <a href="#home" className="hover:text-orange">
                 Home
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="hover:text-orange">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#projects" className="hover:text-orange">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-orange">
-                Contact
               </a>
             </li>
           </ul>
