@@ -1,8 +1,20 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import githubIcon from "../assets/github-icon-1.svg";
 import linkdenIcon from "../assets/linkedin-icon.svg";
+import { useState } from "react";
 
 const Contact = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [emailValue, setEmailValue] = useState("");
+  const [textAreaValue, setTextAreaValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setInputValue("");
+    setEmailValue("");
+    setTextAreaValue("");
+  };
+
   return (
     <section
       id="contact"
@@ -40,6 +52,8 @@ const Contact = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <motion.input
               type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
               placeholder="Your Name"
               className="p-4 text-black rounded-lg w-full sm:w-1/2"
               required
@@ -49,6 +63,8 @@ const Contact = () => {
             />
             <motion.input
               type="email"
+              value={emailValue}
+              onChange={(e) => setEmailValue(e.target.value)}
               placeholder="Your Email"
               className="p-4 text-black rounded-lg w-full sm:w-1/2"
               required
@@ -60,6 +76,8 @@ const Contact = () => {
 
           <motion.textarea
             placeholder="Your Message"
+            value={textAreaValue}
+            onChange={(e) => setTextAreaValue(e.target.value)}
             className="p-4 text-black rounded-lg w-full h-28 md:h-40"
             required
             initial={{ opacity: 0, y: 20 }}
@@ -70,6 +88,7 @@ const Contact = () => {
           {/* Submit Button */}
           <motion.button
             type="submit"
+            onClick={handleSubmit}
             className="px-8 py-3 text-white bg-gradient-to-r from-coral-400 to-peach-500 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-coral-500 hover:to-peach-600"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -82,18 +101,15 @@ const Contact = () => {
 
       {/* Social Icons */}
       <motion.div
-        className='w-full mt-3 flex justify-center items-center'
+        className="w-full mt-3 flex justify-center items-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <a
-          href="https://github.com/KushalKoirala99"
-          target='blank'
-        >
+        <a href="https://github.com/KushalKoirala99" target="blank">
           <motion.img
             src={githubIcon}
-            className='h-12 w-12 mr-4 mb-4 icon-style'
+            className="h-12 w-12 mr-4 mb-4 icon-style"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -101,11 +117,11 @@ const Contact = () => {
         </a>
         <a
           href="https://www.linkedin.com/in/kushal-koirala-448931260/"
-          target='blank'
+          target="blank"
         >
           <motion.img
             src={linkdenIcon}
-            className='h-12 w-12 ml-4 mb-4 icon-style'
+            className="h-12 w-12 ml-4 mb-4 icon-style"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
