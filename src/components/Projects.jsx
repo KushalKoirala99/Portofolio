@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const Projects = () => {
   const projects = [
     {
@@ -37,14 +39,25 @@ const Projects = () => {
       id="projects"
       className="h-screen bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-600 flex flex-col items-center py-12 px-4 overflow-y-auto"
     >
-      <h1 className="text-4xl font-bold my-8 text-white text-center">
+      {/* Heading */}
+      <motion.h1
+        className="text-4xl font-bold my-8 text-white text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         My Projects
-      </h1>
+      </motion.h1>
+
+      {/* Project Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full ">
         {projects.map((item, index) => (
-          <div
+          <motion.div
             key={index}
             className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 h-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
           >
             <div className="p-6 flex flex-col justify-between h-full">
               <h2 className="text-2xl font-semibold text-gray-800 mb-2">
@@ -59,7 +72,7 @@ const Projects = () => {
                 View Project
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
