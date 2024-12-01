@@ -19,7 +19,7 @@ const Home = () => {
 
         <a
           href="#projects"
-          className="inline-block bg-orange-500 text-white py-2 px-6 rounded-lg text-lg sm:text-xl hover:bg-orange-400 transition duration-300 border-black border"
+          className="inline-block px-6 py-3 text-white bg-gradient-to-r from-green-400 to-teal-500 rounded-lg shadow-lg transform transition duration-300 hover:scale-110 hover:shadow-2xl hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-600"
         >
           See My Work
         </a>

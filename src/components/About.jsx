@@ -45,7 +45,7 @@ const About = () => {
         {/* More information button */}
         <a
           href="#projects"
-          className="inline-block bg-white text-orange-500 py-2 px-6 rounded-lg text-lg sm:text-xl hover:bg-orange-400 transition duration-300 mt-8 text-black"
+          className="inline-block mt-6 px-6 py-3 text-white bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg shadow-lg transform transition duration-300 hover:scale-110 hover:shadow-2xl hover:bg-gradient-to-r hover:from-blue-600 hover:to-teal-600"
         >
           See My Work
         </a>

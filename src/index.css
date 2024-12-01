@@ -25,3 +25,12 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+
+.icon-style {
+  @apply h-12 w-12 md:h-16 md:w-16 transition-all duration-300 transform ease-in-out;
+}
+
+.icon-style:hover {
+  @apply scale-110 shadow-lg;
+}
